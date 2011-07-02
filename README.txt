@@ -19,14 +19,14 @@ Usage Example with Sinatra.
   end
 
   # view.erb
-  <img src="/grid/4ba69fde8c8f369a6e000003/filename_50x50.jpg" alt="My Image" />
+  <img src="/grid/4ba69fde8c8f369a6e000003_50x50.jpg" alt="My Image" />
 
 Usage
 
-  /grid/{uid}/foobar_50x50.jpg     # => Crop and resize to 50x50
-  /grid/{uid}/foobar_50x50-nw.jpg  # => Crop and resize with northwest gravity
-  /grid/{uid}/foobar_50x.jpg       # => Resize to a width of 50, preserving AR
-  /grid/{uid}/foobar_x50.jpg       # => Resize to a height of 50, preserving AR
+  /#{prefix}/#{uid}_50x50.jpg     # => Crop and resize to 50x50
+  /#{prefix}/#{uid}_50x50-nw.jpg  # => Crop and resize with northwest gravity
+  /#{prefix}/#{uid}_50x.jpg       # => Resize to a width of 50, preserving AR
+  /#{prefix}/#{uid}_x50.jpg       # => Resize to a height of 50, preserving AR
 
 
   To prevent pesky end-users and bots from flooding your application with
@@ -41,8 +41,8 @@ Usage
 
   You can then use your +secret+ to generate secure links in your templates:
 
-  /grid/{uid}/foobar_50x100-sw-a267c193a7eff046.jpg  # => Successful
-  /grid/{uid}/foobar_120x250-a267c193a7eff046.jpg    # => Returns a bad request error
+  /#{prefix}/#{uid}_50x100-sw-a267c193a7eff046.jpg  # => Successful
+  /#{prefix}/#{uid}_120x250-a267c193a7eff046.jpg    # => Returns a bad request error
 
 
 Inspired by:
