@@ -30,9 +30,9 @@ module Rack
     # Generates route given a prefixes.
     def generate_route(prefix = nil)
       if @keylen
-        /^(\/#{prefix}\/\w+)#{RE_TH_BASE}-([0-9a-f]{#{@keylen}})#{RE_TH_EXT}$/
+        /^(\/#{prefix}\/\w+).*#{RE_TH_BASE}-([0-9a-f]{#{@keylen}})#{RE_TH_EXT}$/
       else
-        /^(\/#{prefix}\/\w+)#{RE_TH_BASE}#{RE_TH_EXT}$/
+        /^(\/#{prefix}\/\w+).*#{RE_TH_BASE}#{RE_TH_EXT}$/
       end
     end
 
