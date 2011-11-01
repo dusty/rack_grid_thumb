@@ -1,5 +1,7 @@
 Rack::GridThumb
 
+  NOTE: Check out rack/thumb as it is better maintained (https://github.com/akdubya/rack-thumb)
+
   Rack::GridThumb is used to dynamically create thumbnails when in front of rack_grid.
   You should run Rack::GridThumb behind a cache such as Varnish or Rack::Cache
 
@@ -64,9 +66,6 @@ Usage
   /#{prefix}/#{uid}/myimage_50x100-sw-a267c193a7eff046.jpg  # => Successful
   /#{prefix}/#{uid}/myimage_120x250-a267c193a7eff046.jpg    # => Returns a bad request error
 
-
-Inspired by:
-  https://github.com/akdubya/rack-thumb
 
 Notes:
   Rack-Cache is a good choice for caching thumbnails so they don't have to be regenerated
